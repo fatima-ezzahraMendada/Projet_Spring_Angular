@@ -1,0 +1,15 @@
+<nav class="p-3 bg-primary navbar-dark">
+  <ul class="nav nav-pills">
+    <li *ngFor = " let action of actions">
+      <button (click)="setCurrentAction(action)"
+      routerLink="{{action.route}}"
+      [class]="currentAction==action?'btn btn-light ms-1':'btn btn-outline-light ms-1'"
+      >
+      {{action.title}} <i class="bi bi-{{action.icon}}"></i>
+    </button>
+    </li>
+  </ul>
+</nav>
+<router-outlet>
+
+</router-outlet>
